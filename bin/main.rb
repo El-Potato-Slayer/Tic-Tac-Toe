@@ -1,3 +1,3 @@
-#!F:\dev\Tic-Tac-Toe\bin ruby 
+#!/usr/bin/env ruby
 
-puts 'Hello World !'
+puts "Hello world!"
