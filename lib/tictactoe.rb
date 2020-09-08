@@ -1,4 +1,3 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 class TicTacToe
   attr_reader :player1, :player2, :board
   def initialize(player1, player2, board)
@@ -65,4 +64,3 @@ class TicTacToe
 
   def current_player; end
 end
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
