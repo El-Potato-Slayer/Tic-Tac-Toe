@@ -26,11 +26,10 @@ class TicTacToe
 
   def play_game
     @move_count = 0
-    current_player = nil
-    while @move_count < 10
-      current_player = @move_count.even? ? player1 : player2
-      print "#{current_player.name} Enter a row: "
-
+    @current_player = nil
+    while @move_count < 10 && !won?
+      @current_player = @move_count.even? ? player1 : player2
+      print "#{@current_player.name} Enter a row: "
       row = gets.chomp.to_i
       next unless valid_input?(row)
 
@@ -39,11 +38,20 @@ class TicTacToe
       next unless valid_input?(column)
 
       if board.move_valid?(row - 1, column - 1)
-        board.apply_coords(row - 1, column - 1, current_player.sign)
+        board.apply_coords(row - 1, column - 1, @current_player.sign)
         @move_count += 1
       end
       print_board
-      puts 'Its a draw' if draw?
+    end
+    game_result
+  end
+
+  def game_result
+    puts 'Result:'
+    if won?
+      puts "#{@current_player.name} has won"
+    else
+      puts 'Its a draw'
     end
   end
 
@@ -60,6 +68,20 @@ class TicTacToe
 
   def won?
     # logic to whether player has won
+    wining_combo = [[[0, 0], [0, 1], [0, 2]],
+                    [[1, 0], [1, 1], [1, 2]],
+                    [[2, 0], [2, 1], [2, 2]],
+                    [[0, 0], [1, 0], [2, 0]],
+                    [[0, 1], [1, 1], [2, 1]],
+                    [[0, 2], [1, 2], [2, 2]],
+                    [[0, 0], [1, 1], [2, 2]],
+                    [[0, 2], [1, 1], [2, 0]]]
+
+    wining_combo.detect do |combo|
+      @board.matrix[combo[0][0]][combo[0][1]] == @board.matrix[combo[1][0]][combo[1][1]] &&
+        @board.matrix[combo[1][0]][combo[1][1]] == @board.matrix[combo[2][0]][combo[2][1]] &&
+        @board.matrix[combo[0][0]][combo[0][1]] != ' '
+    end
   end
 
   def current_player; end

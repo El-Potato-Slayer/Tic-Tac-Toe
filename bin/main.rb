@@ -1,8 +1,8 @@
+#!/usr/bin/env ruby
+
 require_relative '../lib/player.rb'
 require_relative '../lib/tictactoe.rb'
 require_relative '../lib/board.rb'
-
-# !/usr/bin/env ruby
 
 puts 'Enter Name:'
 @name = gets.chomp
@@ -24,7 +24,4 @@ board = Board.new
 
 game = TicTacToe.new(player1, player2, board)
 game.print_board
-
 game.play_game
-
-puts "#{current_player.name} has won"
