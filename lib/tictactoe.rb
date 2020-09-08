@@ -27,7 +27,7 @@ class TicTacToe
   def play_game
     @move_count = 0
     current_player = nil
-    (1..9).each do
+    while @move_count < 10 do
       current_player = @move_count.even? ? player1 : player2
       print "#{current_player.name} Enter a row: "
 
