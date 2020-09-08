@@ -1,3 +1,4 @@
+# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 class TicTacToe
   attr_reader :player1, :player2, :board
   def initialize(player1, player2, board)
@@ -15,23 +16,57 @@ class TicTacToe
     # prints 2D array
     # puts 'Now, your move is displayed on the board'
     Gem.win_platform? ? (system 'cls') : (system 'clear')
-    matrix.each_with_index do |row, i|
+    @board.matrix.each_with_index do |row, i|
       row.each_with_index do |col, j|
         j < 2 ? print(" #{col} |") : print(" #{col} ")
       end
       i < 2 && puts("\n---+---+---")
     end
     puts ''
+end
+
+  def play_game
+    @move_count = 0
+    current_player = nil
+    (1..9).each do
+      current_player = @move_count.even? ? player1 : player2
+      print "#{current_player.name} Enter a row: "
+
+      row = gets.chomp.to_i
+      if valid_input?(row)
+        print 'Enter a column: '
+        column = gets.chomp.to_i
+        if valid_input?(column)
+          if board.move_valid?(row - 1, column - 1)
+            board.apply_coords(row - 1, column - 1, current_player.sign)
+            @move_count += 1
+          end
+          print_board
+          puts 'Its a draw' if draw?
+        else
+          puts 'invalid input'
+        end
+      else
+        puts 'invalid input'
+      end
+    end
+  end
+
+  def valid_input?(input)
+    input >= 1 && input <= 3
   end
 
   def draw?
-    #figures out whether players have drawn
+    # figures out whether players have drawn
+    @move_count == 9
   end
 
   def won?
-    #logic to whether player has won
+    # logic to whether player has won
   end
 
-  def current_player
-  end
+  def current_player; end
 end
+
+# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+
