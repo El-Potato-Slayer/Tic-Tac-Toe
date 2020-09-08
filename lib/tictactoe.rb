@@ -1,4 +1,3 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 class TicTacToe
   attr_reader :player1, :player2, :board
   def initialize(player1, player2, board)
@@ -23,7 +22,7 @@ class TicTacToe
       i < 2 && puts("\n---+---+---")
     end
     puts ''
-end
+  end
 
   def play_game
     @move_count = 0
@@ -33,27 +32,25 @@ end
       print "#{current_player.name} Enter a row: "
 
       row = gets.chomp.to_i
-      if valid_input?(row)
-        print 'Enter a column: '
-        column = gets.chomp.to_i
-        if valid_input?(column)
-          if board.move_valid?(row - 1, column - 1)
-            board.apply_coords(row - 1, column - 1, current_player.sign)
-            @move_count += 1
-          end
-          print_board
-          puts 'Its a draw' if draw?
-        else
-          puts 'invalid input'
-        end
-      else
-        puts 'invalid input'
+      next unless valid_input?(row)
+
+      print 'Enter a column: '
+      column = gets.chomp.to_i
+      next unless valid_input?(column)
+
+      if board.move_valid?(row - 1, column - 1)
+        board.apply_coords(row - 1, column - 1, current_player.sign)
+        @move_count += 1
       end
+      print_board
+      puts 'Its a draw' if draw?
     end
   end
 
   def valid_input?(input)
-    input >= 1 && input <= 3
+    valid = input >= 1 && input <= 3
+    puts 'invalid input' unless valid
+    valid
   end
 
   def draw?
@@ -67,6 +64,3 @@ end
 
   def current_player; end
 end
-
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
-
