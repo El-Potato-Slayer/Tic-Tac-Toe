@@ -11,6 +11,7 @@ class Board
   def apply_coords(_row, _col)
     # applies coordinates of user input to 2D array
     puts 'applies coordinates'
+    @matrix[row][col] = 'X'
   end
 
   def move_valid?
