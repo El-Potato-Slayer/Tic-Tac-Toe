@@ -8,5 +8,6 @@ class TicTacToe
 
   def print_board
     #returns string of board
+    puts 'Board'
   end
 end
