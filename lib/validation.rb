@@ -16,15 +16,25 @@ class Validation
     sign
   end
 
-  def ask_name(name1, name2)
+  def input_valid?(obj, obj1, obj2)
     until @valid
-      print "#{name1} is already taken\nPlease enter another name: " if name1 == name2
-      name2 = gets.chomp if name1 == name2
-      next unless name1 != name2
-
+      print "#{obj1} is already taken\nPlease enter another #{obj}: " if obj1 == obj2
+      obj2 = gets.chomp if obj1 == obj2
+      next unless obj1 != obj2
       @valid = true
     end
     @valid = false
-    name2
+    obj2
   end
+
+  # def validate_sign(sign1, sign2)
+  #   until @valid
+  #     print "#{sign1} is already taken\nPlease enter another sign: " if sign1 == sign2
+  #     sign2 = gets.chomp if sign1 == sign2
+  #     next unless sign1 != sign2
+  #     @valid = true
+  #   end
+  #   @valid = false
+  #   sign2
+  # end
 end

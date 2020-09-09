@@ -25,10 +25,10 @@ class TicTacToe
     while !draw? && !has_won
       current_player = @move_count.even? ? player1 : player2
 
-      row = get_input(current_player, 'row')
+      row = get_input(current_player, 'row').to_i
       next unless valid_input?(row)
 
-      column = get_input(current_player, 'column')
+      column = get_input(current_player, 'column').to_i
       next unless valid_input?(column)
 
       if board.move_valid?(row - 1, column - 1)
@@ -45,7 +45,7 @@ class TicTacToe
 
   def get_input(player, coordinate)
     print "#{player.name} enter a #{coordinate}: "
-    gets.chomp.to_i
+    Integer(gets) rescue nil
   end
 
   def valid_input?(input)
