@@ -29,4 +29,5 @@ board = Board.new
 
 game = TicTacToe.new(player1, player2, board)
 game.print_board
+
 game.play_game

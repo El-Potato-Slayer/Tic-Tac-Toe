@@ -32,7 +32,7 @@ class TicTacToe
       next unless valid_input?(column)
 
       if board.move_valid?(row - 1, column - 1)
-        board.apply_coords(row - 1, column - 1, @current_player.sign)
+        board.apply_coords(row - 1, column - 1, current_player.sign)
         @move_count += 1
         puts @move_count
       end
