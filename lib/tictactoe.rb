@@ -40,7 +40,7 @@ class TicTacToe
       print_board
       has_won = diagonal?(current_player.sign) || axial?(current_player.sign)
     end
-    puts draw? ? "It's a draw" : "#{current_player.name} has won"
+    puts has_won ? "#{current_player.name} has won" : "It's a draw"
   end
 
   def get_input(player, coordinate)
