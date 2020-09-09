@@ -16,12 +16,12 @@ player1 = Player.new(@name1, @sign1)
 
 print 'Player Two, Enter Name: '
 @name2 = gets.chomp
-@name2 = valid.input_valid?("name", @name1, @name2)
+@name2 = valid.input_valid?('name', @name1, @name2)
 
 print 'Enter Sign: '
 @sign2 = gets.chomp
 @sign2 = valid.ask_sign(@sign2)
-@sign2 = valid.input_valid?("sign", @sign1, @sign2)
+@sign2 = valid.input_valid?('sign', @sign1, @sign2)
 player2 = Player.new(@name2, @sign2)
 
 player1.print

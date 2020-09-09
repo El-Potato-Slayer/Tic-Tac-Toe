@@ -21,20 +21,10 @@ class Validation
       print "#{obj1} is already taken\nPlease enter another #{obj}: " if obj1 == obj2
       obj2 = gets.chomp if obj1 == obj2
       next unless obj1 != obj2
+
       @valid = true
     end
     @valid = false
     obj2
   end
-
-  # def validate_sign(sign1, sign2)
-  #   until @valid
-  #     print "#{sign1} is already taken\nPlease enter another sign: " if sign1 == sign2
-  #     sign2 = gets.chomp if sign1 == sign2
-  #     next unless sign1 != sign2
-  #     @valid = true
-  #   end
-  #   @valid = false
-  #   sign2
-  # end
 end

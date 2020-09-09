@@ -45,7 +45,11 @@ class TicTacToe
 
   def get_input(player, coordinate)
     print "#{player.name} enter a #{coordinate}: "
-    Integer(gets) rescue nil
+    begin
+      Integer(gets)
+    rescue StandardError
+      nil
+    end
   end
 
   def valid_input?(input)
