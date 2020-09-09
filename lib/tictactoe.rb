@@ -1,6 +1,5 @@
 class TicTacToe
   attr_reader :player1, :player2, :board
-  @draw_counter 
 
   def initialize(player1, player2, board)
     @player1 = player1
@@ -22,11 +21,11 @@ class TicTacToe
     Gem.win_platform? ? (system 'cls') : (system 'clear')
     @board.matrix.each_with_index do |row, i|
       row.each_with_index do |col, j|
-        j < 2 ? updated_board += " #{col} |" : updated_board += " #{col} "
+        updated_board += j < 2 ? " #{col} |" : " #{col} "
       end
       i < 2 && updated_board += "\n---+---+---\n"
     end
-    return updated_board += "\n\n"
+    updated_board += "\n\n"
   end
 
   def draw?
@@ -37,27 +36,27 @@ class TicTacToe
     axial?(sym) || diagonal?(sym)
   end
 
-  private 
+  private
+
   def axial?(sym)
     board.matrix.each_with_index do |row, i|
       vert_flag = 0
       return true if row.all?(sym)
 
       row.each_with_index do |_col, j|
-        vert_flag += 1 if board.matrix[j][i] == sym 
+        vert_flag += 1 if board.matrix[j][i] == sym
         return true if vert_flag == 3
       end
     end
     false
   end
 
-  private 
   def diagonal?(sym)
     diag1_flag = 0
     diag2_flag = 0
     board.matrix.each_with_index do |row, i|
-      diag1_flag += 1 if board.matrix[i][i] == sym 
-      diag2_flag += 1 if board.matrix[i][row.length - 1 - i] == sym 
+      diag1_flag += 1 if board.matrix[i][i] == sym
+      diag2_flag += 1 if board.matrix[i][row.length - 1 - i] == sym
       return true if diag1_flag == 3
       return true if diag2_flag == 3
     end
