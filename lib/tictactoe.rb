@@ -22,7 +22,7 @@ class TicTacToe
     current_player = nil
     has_won = false
 
-    while @move_count < 10 && !has_won
+    while !draw? && !has_won
       current_player = @move_count.even? ? player1 : player2
 
       row = get_input(current_player, 'row')
@@ -34,6 +34,7 @@ class TicTacToe
       if board.move_valid?(row - 1, column - 1)
         board.apply_coords(row - 1, column - 1, current_player.sign)
         @move_count += 1
+        puts @move_count
       end
 
       print_board

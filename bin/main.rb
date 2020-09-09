@@ -16,7 +16,7 @@ player1 = Player.new(@name1, @sign1)
 
 print 'Player Two, Enter Name: '
 @name2 = gets.chomp
-valid.ask_name(@name1, @name2)
+@name2 = valid.ask_name(@name1, @name2)
 
 print 'Enter Sign: '
 @sign2 = gets.chomp

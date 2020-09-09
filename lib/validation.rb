@@ -6,7 +6,7 @@ class Validation
 
   def ask_sign(sign)
     until @valid
-      puts 'Please enter 1 character for the sign' if sign.length > 1
+      print "Please enter 1 character for the sign\nPlease enter another sign: " if sign.length > 1
       sign = gets.chomp if sign.length > 1
       next unless sign.length == 1
 
@@ -18,12 +18,13 @@ class Validation
 
   def ask_name(name1, name2)
     until @valid
-      puts "#{name1} is already taken" if name1 == name2
-      name2 = gets.chomp
+      print "#{name1} is already taken\nPlease enter another name: " if name1 == name2
+      name2 = gets.chomp if name1 == name2
       next unless name1 != name2
 
       @valid = true
     end
     @valid = false
+    name2
   end
 end
