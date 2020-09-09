@@ -17,7 +17,10 @@ Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 30
 
-
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false 
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
