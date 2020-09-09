@@ -9,7 +9,7 @@ class Board
   end
 
   def apply_coords(row, col, sym)
-    # applies coordinates of user input to 2D array
+    # applies coordinates of user input to 2D array.
     @matrix[row][col] = sym
   end
 
