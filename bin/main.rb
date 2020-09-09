@@ -1,45 +1,26 @@
+#!/usr/bin/env ruby
+
 require_relative '../lib/player.rb'
 require_relative '../lib/tictactoe.rb'
 require_relative '../lib/board.rb'
+require_relative '../lib/validation.rb'
 
-# !/usr/bin/env ruby
-
-@valid = false
-
-def ask_sign
-  sign = nil
-  while !@valid
-    print 'Enter Sign: '
-    sign = gets.chomp
-    puts 'Please enter 1 character for the sign' if sign.length > 1
-    next unless sign.length == 1
-    @valid = true
-  end
-  sign
-end
+valid = Validation.new
 
 print 'Player One, Enter Name: '
 @name1 = gets.chomp
-@sign1 = ask_sign
-
-
-
+print 'Enter Sign: '
+@sign1 = gets.chomp
+@sign1 = valid.ask_sign(@sign1)
 player1 = Player.new(@name1, @sign1)
 
-@valid = false
+print 'Player Two, Enter Name: '
+@name2 = gets.chomp
+valid.ask_name(@name1, @name2)
 
-while !@valid
-  print 'Player Two, Enter Name: '
-  @name2 = gets.chomp
-  puts "#{@name1} is already taken" if @name1 == @name2
-  next unless @name1 != @name2
-  print 'Enter Sign: '
-  @sign2 = gets.chomp
-  @valid = true
-end
-
-
-
+print 'Enter Sign: '
+@sign2 = gets.chomp
+@sign2 = valid.ask_sign(@sign2)
 player2 = Player.new(@name2, @sign2)
 
 player1.print

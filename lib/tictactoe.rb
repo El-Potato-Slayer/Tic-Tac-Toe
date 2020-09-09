@@ -44,7 +44,7 @@ class TicTacToe
 
   def get_input(player, coordinate)
     print "#{player.name} enter a #{coordinate}: "
-    name = gets.chomp.to_i
+    gets.chomp.to_i
   end
 
   def valid_input?(input)
