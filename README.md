@@ -26,7 +26,7 @@ This is a tic-tac-toe game built with ruby and oop principles
     1- main.rb: This file is responsible for getting validated inputs from the user, outputting messages, and calling all the required methods.
     2- player.rb: This file is responsible for storing player variables such as (name, sign).
     3- board.rb: This file is responsible for the creating the board, and applying the coordinates.
-	  4- tictactoe.rb: This file is responsible for the game logic, validations, comparisions and board manipulation.
+    4- tictactoe.rb: This file is responsible for the game logic, validations, comparisions and board manipulation.
 
     ---------------------------------------------------------------------------------------------------------------------
 
