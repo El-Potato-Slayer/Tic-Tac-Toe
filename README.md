@@ -44,6 +44,26 @@ This is a tic-tac-toe game built with ruby and oop princible
 - Ruby
 - VS Code
 
+## Getting Started
+
+### Prerequisites
+
+To get this project up and running, you must already have ruby installed on your computer.
+
+### Installation
+
+**To get this project set up on your local machine, follow these simple steps:**
+
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Copy and paste the following code into the Terminal:
+    git clone https://github.com/El-Potato-Slayer/Tic-Tac-Toe
+4. Hit enter.
+5. Once the repository has been cloned, navigate inside the repository and type:
+    bin/main.rb
+    This will run the game and you will be able to play it using the terminal.
+6. Have fun!
+
 
 ## Author Details
 ## Author 2
