@@ -63,8 +63,8 @@ To get this project up and running, you must already have ruby installed on your
     This will run the game and you will be able to play it using the terminal.
 6. Have fun!
 
+## Author Details::
 
-## Author Details
 ## Author 1
 👤 **Chad van Wyk**
 
