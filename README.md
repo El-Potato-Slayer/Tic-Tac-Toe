@@ -1,43 +1,42 @@
 # Tic-Tac-Toe
-Tic-Tac-Toe is a very popular game, which consists in making a sequence of three symbols in either a row, column or diagonal in a 3x3 board.
+Tic-Tac-Toe is a very popular game, which consists of making a sequence of three symbols in either a row, column or diagonal in a 3x3 board.
 
 # How to play:
-1. Select the first player name.
-2. The first player gets to chose which sign to use it can be any letter but only one character.
-3. Select the second player name following the instruction given on step 1, the names should be uniqe;
-4. The second player gets to chose a sign but it have to be different from the first player's sign;
+1. Select the first player's name.
+2. The first player gets to choose which sign they want to use; This should only be one character.
+3. Select the second player's name, following the instruction given on step 1. The names should be unique.
+4. The second player gets to choose a sign but it has to be different from the first player's sign.
 5. The game will begin. The Tic-Tac-Toe board will be printed with empty rows and columns.
-6. To win this game one player must make a sequence of three tokens either on rows, columns or diagonals;
-7. Choose the position where you want to place your first sign, by inputting rows and colums and your input should be in between 1 to 3;
-8. After that, this position will be taken and the second player will take this turn;
+6. To win this game one player must make a sequence of three signs either on rows, columns or diagonals.
+7. The selected player gets to choose the position where they want to place their sign, by inputting rows and colums. The input should be equal to or in between 1 to 3 integer values.
+8. After that, the coordinates will be validated and recorded. Afterwards, the second player will be selected to take a turn.
 9. The selected position can't be chosen twice;
 10. The game will take turns until a player wins or no more positions are available on the board, in this case it will be a draw!
 
 ## Game-Instruction:
 
-This is a tic-tac-toe game built with ruby and oop princible 
+This is a tic-tac-toe game built with ruby and oop principles 
+
+    In this project, all the logic and manipulation is put in the files inside lib folder except for these that require consistant outputs.
+
+    ---------------------------------------------------------------------------------------------------------------------
+
     In this game there are 4 main files 
 
-    1- main.rb which is the file that's responsible for getting inputs from the user, outputing meesages and calling all the methods and validations for inputs.
-    2- player.rb this is a liberary that's responsable of storing players variables such as (name, sign).
-    3- board.rb which is responsible for the creating the board, and appliying the coordinates.
-	4- tictactoe.rb which is responsible for the game logics, validations, comparisions and board manipulation.
-	
+    1- main.rb: This file is responsible for getting validated inputs from the user, outputting messages, and calling all the required methods.
+    2- player.rb: This file is responsible for storing player variables such as (name, sign).
+    3- board.rb: This file is responsible for the creating the board, and applying the coordinates.
+	  4- tictactoe.rb: This file is responsible for the game logic, validations, comparisions and board manipulation.
 
     ---------------------------------------------------------------------------------------------------------------------
 
-    In this project all the logic and manipulation is put in the files inside lib folder except for these that require consistant
-    outputs.
-
-    ---------------------------------------------------------------------------------------------------------------------
-
-    the game consists of 6 steps:
-    1- get players names and validate that they are unique.
-    2- get player1 sign and validate that it's a letter.
-    3- get player2 sign and validate that it's a letter and uniq from player1's sign.
+    The game consists of 6 steps:
+    1- get the players' names and validate that they are unique.
+    2- get player one's sign and validate that it's a character.
+    3- get player two's sign and validate that it's a character and unique from player one's sign.
     4- display the board and ask for a move.
-    5- validating the given move that it's not already taken or that it's not between 1-3, this proccess runs for both players.
-    6- cecking for win condition, if any player wins it displayes it, else it displays "it's a draw".
+    5- validating the given move by checking that the coordinates are not already taken and that they are equal to or between 1-3. This process runs for both players.
+    6- checks for the win conditions. If any player wins, it will display the player that won, else it will display "it's a draw".
 
 ## Built With
 
@@ -66,13 +65,13 @@ To get this project up and running, you must already have ruby installed on your
 
 
 ## Author Details
-## Author 2
-👤 ****
+## Author 1
+👤 **Chad van Wyk**
 
-- Github: 
-- Linkedin:
-- E-mail: <a href="mailto:lamiasristy@gmail.com?subject=Hello Lamia!">Email</a>  
-- Twitter: 
+- Github:[@El-Potato-Slayer](https://github.com/El-Potato-Slayer)
+- LinkedIn:[@Chad Van Wyk](https://www.linkedin.com/in/chad-van-wyk-4228b21a6/?originalSubdomain=za)
+- E-mail: <a href="mailto:leighchad.cl@gmail.com?subject=Whaddup Chad!">Email</a>
+- Twitter:[@elpotatoslayer](https://twitter.com/elpotatoslayer)
 
 
 ## Author 2
