@@ -75,5 +75,5 @@ until has_won || tictactoe.draw?
   has_won = tictactoe.won?(player_turn.sign)
 end
 
-puts tictactoe.draw? ? 'The game is a draw' : "#{player_turn.name} has won"
+puts tictactoe.won?(player_turn.sign) ? "#{player_turn.name} has won" : 'The game is a draw'
 # game.play_game
